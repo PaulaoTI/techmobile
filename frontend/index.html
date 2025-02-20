@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logoredonda.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Paulo Tech - Tela Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(133, 68, 236);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        button {
+            display: block;
+            background-color: rgb(66, 66, 66);
+            font-size: 17px;
+            padding: 15px 10px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            width: 200px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: rgb(44, 44, 44);
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .menu {
+            height: 40px;
+            width: 50px;
+            background-color: rgb(51, 51, 51);
+            border-radius: 5px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 9px;
+            position: absolute;
+            left: 7%;
+            top: 0px;
+            transform: translateX(-50%);
+            z-index: 2000;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -350px;
+            top: 58px;
+            width: 300px;
+            background-color: rgb(51, 51, 51);
+            border-radius: 5px;
+            color: white;
+            transition: left 0.4s ease;
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.849);
+            font-size: 1.2rem;
+            overflow-y: auto;
+            height: 630px;
+            z-index: 2000;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .profile-submenu {
+            display: none;
+            background-color: rgba(68, 68, 68, 0.8);
+            box-shadow: 2px 0 5px rgba(255, 255, 255, 0.945);
+            padding: 10px;
+            margin-top: 1px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .profile-submenu p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 0;
+            color: white;
+            font-size: 14px;
+        }
+
+        .profile-submenu Button {
+            background-color: rgb(46, 46, 46);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.945);
+        }
+
+        hr {
+            border: 1px solid #ffffff;
+            box-shadow: 2px 0 5px rgba(255, 255, 255, 0.945);
+        }
+
+        .hr2 {
+            border: 1px solid #ffffff;
+            box-shadow: 2px 0 5px rgba(255, 255, 255, 0.945);
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 3px;
+            left: 50px;
+        }
+
+        .banner {
+            text-align: center;
+            color: white;
+        }
+
+        .content-cards {
+            display: flex;
+            margin-top: 210px;
+            position: absolute;
+            left: 90px;
+            flex-wrap: wrap;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card1,
+        .card2,
+        .card3 {
+            width: 200px;
+            padding: 30px;
+            background-color: rgb(51, 51, 51);
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.89);
+        }
+
+        .card1 h3,
+        .card2 h3,
+        .card3 h3 {
+            margin-top: 0;
+        }
+
+        .card1 p,
+        .card2 p,
+        .card3 p {
+            font-size: 17px;
+        }
+
+        .card1 .btn,
+        .card2 .btn,
+        .card3 .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            color: white;
+            background-color: rgb(39, 39, 39);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.74);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="menu" id="menuToggle">
+        <div class="menu-icon" id="icon">⫶☰</div>
+    </div>
+    <div class="main-content">
+        <div class="banner">
+            <h2>Bem-vindo ao Paulo Tech!</h2>
+            <p>Explore o melhor conteúdo sobre Tecnologia,Programação e Segurança da Informação.</p>
+        </div>
+    </div>
+    <div class="content-cards">
+        <div class="card1">
+            <h3>Big Data</h3>
+            <p>Descubra como grandes volumes de dados estão moldando o futuro.</p>
+            <a href="/bigData" class="btn">Saiba Mais</a>
+        </div>
+        <div class="card2">
+            <h3>Mercado de TI</h3>
+            <p>Aprenda mais e se prepare para o mercado de trabalho da area de TI.</p>
+            <a href="/mercadoDeTI" class="btn">Saiba Mais</a>
+        </div>
+        <div class="card3">
+            <h3>Data centers</h3>
+            <p>Explore a infraestrutura que suporta a tecnologia moderna e continuidade dos serviços.</p>
+            <a href="/dataCenters" class="btn">Saiba Mais</a>
+        </div>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <a href="" id="profileLink">Meu perfil</a>
+        <div class="profile-submenu" id="profileSubmenu">
+            <label>Nome</label>
+            <p id="profileName"></p>
+            <hr class="hr2">
+            <label>Telefone</label>
+            <p id="profilePhone"></p>
+            <hr class="hr2">
+            <label>Email</label>
+            <p id="profileEmail"></p>
+            <hr class="hr2">
+            <button class="editButton" id="editButton">Editar</button>
+        </div>
+        <hr>
+        <a href="/InteligenciaArtificial">Inteligência artificial</a>
+        <hr>
+        <a href="/informatica">Informática</a>
+        <hr>
+        <a href="/programacao">Programação</a>
+        <hr>
+        <a href="/redes">Redes</a>
+        <hr>
+        <a href="/segurancaDaInformacao">Seg. Info</a>
+        <hr>
+        <a href="/bancoDeDados">Banco de dados</a>
+        <hr>
+        <a href="/cursos">Cursos Gratuitos</a>
+        <hr>
+        <a href="/melhoresIas">Melhores cursos de IA</a>
+        <hr>
+        <a href="/sobreMim">Sobre nós</a>
+        <hr>
+        <a href="/cadastro">Sair</a>
+    </div>
+    <script>
+        const icon = document.getElementById('icon');
+
+        icon.addEventListener('mouseenter', () => {
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        });
+    </script>
+    <script>
+        const mensagemNatal = document.getElementById('mensagem');
+        const tooltip2 = document.getElementById('tooltip2');
+
+        mensagemNatal.addEventListener('click', () => {
+            if (tooltip2.style.visibility === 'visible') {
+                tooltip2.style.visibility = 'hidden';
+                tooltip2.style.opacity = '0';
+            } else {
+                tooltip2.style.visibility = 'visible';
+                tooltip2.style.opacity = '1';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nome = localStorage.getItem('nome');
+            const telefone = localStorage.getItem('telefone');
+            const email = localStorage.getItem('email');
+
+            if (nome && telefone && email) {
+                document.getElementById('profileName').textContent = `${nome}`;
+                document.getElementById('profilePhone').textContent = `${telefone}`;
+                document.getElementById('profileEmail').textContent = `${email}`;
+            } else {
+                document.getElementById('profileName').textContent = 'Nenhum nome encontrado';
+                document.getElementById('profilePhone').textContent = 'Nenhum telefone encontrado';
+                document.getElementById('profileEmail').textContent = 'Nenhum email encontrado';
+            }
+
+            const editButton = document.getElementById('editButton');
+            editButton.addEventListener('click', function () {
+                window.location.href = '/editar';
+            });
+        });
+    </script>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const profileLink = document.getElementById('profileLink');
+        const profileSubmenu = document.getElementById('profileSubmenu');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        profileLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            profileSubmenu.style.display = profileSubmenu.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+
+</html>

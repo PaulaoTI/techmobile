@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logoredonda.png" type="image/x-icon">
+    <title>Paulo Tech - Banco de dados</title>
+    <style>
+        body {
+            overflow-x: hidden;
+            background-color: #313131;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .menu {
+            height: 50px;
+            width: 100%;
+            background-color: #202020;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu h1 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffffff;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 2px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.87);
+        }
+
+        @media (max-width: 600px) {
+            .menu h1 {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h1>Banco de dados</h1>
+    </div>
+    <h2>
+        Um banco de dados é uma coleção organizada de dados que podem ser armazenados, acessados e manipulados de forma eficiente. Ele permite que informações sejam estruturadas e gerenciadas para diversos fins, como o armazenamento de dados de clientes, inventário, registros financeiros, entre outros. <br><br>
+        <hr>
+        Principais Conceitos de Bancos de Dados: <br><br>
+        <li>
+            Tabela: Estrutura que armazena dados em linhas e colunas, semelhante a uma planilha: (ex.: clientes, produtos, pedidos).
+        </li><br>
+        <li>
+            Registro (linha): Cada linha na tabela representa uma entrada de dados completa para a entidade.
+        </li><br>
+        <li>
+            Campo (coluna): Cada coluna representa um atributo específico da entidade.
+        </li><br>
+        <li>
+            Chave Primária: Um campo que identifica exclusivamente cada registro em uma tabela.
+        </li><br>
+        <li>
+            Chave Estrangeira: Um campo que cria um vínculo entre duas tabelas, estabelecendo relacionamentos. 
+        </li><br>
+        <hr>
+        Tipos de Bancos de Dados: <br><br>
+        <li>Relacional (SQL): Baseado em tabelas, usa a linguagem SQL para manipulação de dados: MySQL, PostgreSQL, Oracle.</li><br>
+        <li>Não Relacional (NoSQL): Ideal para dados não estruturados, como MongoDB e Cassandra.</li><br>
+        <li>Banco de Dados em Nuvem: Hospedado em servidores na nuvem, com acesso online: Amazon RDS, Google Cloud Firestore.</li><br>
+        <li>Banco de Dados Orientado a Objetos: Combina conceitos de orientação a objetos e banco de dados: db4o e ObjectDB.</li><br>
+        <hr>
+        Principais Linguagens:<br><br>
+        <li>SQL: A linguagem padrão para bancos de dados relacionais, utilizada para criar, ler, atualizar e deletar dados.</li><br>
+        <li>NoSQL: Como o MongoDB Query Language (MQL), para bancos de dados não relacionais.</li><br>
+    </h2>
+</body>
+</html>

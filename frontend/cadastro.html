@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logoredonda.png" type="image/x-icon">
+    <title>Paulo Tech - Tela de cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(121, 44, 245);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            margin: 0;
+            overflow: hidden;
+        }
+    
+        .mylogo {
+            height: 120px;
+            width: 120px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.849);
+            position: absolute;
+            top: 10px;
+            left: calc(50% - 60px); /* Centraliza */
+        }
+    
+        .container {
+            border: 2px solid #b3b2b2;
+            background: #b3b2b2;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 350px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.836);
+        }
+    
+        .button {
+            width: 100%;
+            padding: 12px;
+            background-color: #494949;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        .button:hover {
+            background-color: #222222;
+        }
+    
+        h1 {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+    
+        label {
+            color: rgb(0, 0, 0);
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+        }
+    
+        input {
+            width: 90%;
+            padding: 10px;
+            color: black;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #d1d1d1;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.795);
+        }
+    
+        input:focus {
+            outline: none;
+            border-color: #494949;
+        }
+    
+        menu {
+            height: 60px;
+            width: 90%;
+            background-color: #2b2b2b;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.795);
+            position: absolute;
+            top: 0;
+            left: 100;
+        }
+    
+        @media (max-width: 768px) {
+            .mylogo {
+                height: 100px;
+                width: 100px;
+                top: 5px;
+                left: calc(50% - 50px);
+            }
+    
+            .container {
+                width: 95%;
+            }
+    
+            h1 {
+                font-size: 20px;
+            }
+    
+            label {
+                font-size: 14px;
+            }
+    
+            input {
+                font-size: 13px;
+            }
+    
+            .button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <menu>
+
+    </menu>
+    <img src="/img/mylogo.webp" class="mylogo" alt="mylogo">
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form id="cadastroForm" action="cadastro.php" method="POST">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required> <br><br>
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 0000-0000" required> <br><br>
+
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="Seuemail@gmail.com" required> <br><br>
+
+            <button class="button" type="submit">Cadastrar</button>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('cadastroForm');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            alert('Cadastro realizado ✔');
+
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('telefone', telefone);
+            localStorage.setItem('email', email);
+
+            window.location.href = '/home';
+        });
+    </script>
+</body>
+</html>
