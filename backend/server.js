@@ -9,37 +9,37 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, '..' , 'frontend', 'public')));
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "",
-});
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "",
+// });
 
-db.connect((err) => {
-  if (err) {
-    console.error("Erro ao conectar no MySQL", err);
-    return;
-  }
-  console.log("Conectado ao MySQL");
-});
+// db.connect((err) => {
+//   if (err) {
+//     console.error("Erro ao conectar no MySQL", err);
+//     return;
+//   }
+//   console.log("Conectado ao MySQL");
+// });
 
-app.post("/cadastro", (req, res) => {
-  const { nome, telefone, email } = req.body;
+// app.post("/cadastro", (req, res) => {
+//   const { nome, telefone, email } = req.body;
 
-  if (!nome || !email || !senha) {
-    return res.status(400).json({ error: "Preencha todos os campos" });
-  }
+//   if (!nome || !email || !senha) {
+//     return res.status(400).json({ error: "Preencha todos os campos" });
+//   }
 
-  const insertUserSQL = "INSERT INTO usuarios (nome, telefone, email) VALUES (?, ?, ?)";
-  db.query(insertUserSQL, [nome, telefone, email], (err, result) => {
-    if (err) {
-      console.error("Erro ao cadastrar usuário:", err);
-      return res.status(500).json({ error: "Erro ao cadastrar usuário" });
-    }
-    res.json({ message: "Usuário cadastrado com sucesso" });
-  });
-});
+//   const insertUserSQL = "INSERT INTO usuarios (nome, telefone, email) VALUES (?, ?, ?)";
+//   db.query(insertUserSQL, [nome, telefone, email], (err, result) => {
+//     if (err) {
+//       console.error("Erro ao cadastrar usuário:", err);
+//       return res.status(500).json({ error: "Erro ao cadastrar usuário" });
+//     }
+//     res.json({ message: "Usuário cadastrado com sucesso" });
+//   });
+// });
 
 app.get("/cadastro", (req, res) => {
   
